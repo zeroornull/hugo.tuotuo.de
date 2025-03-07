@@ -23,6 +23,9 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/src hugomods/hugo:exts hugo --minify --baseURL "${{ secrets.HUGO_BASEURL }}"
 
+      - name: Get current timestamp
+        run: echo "TIMESTAMP=$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
+
       - name: Build and push Nginx image
         uses: docker/build-push-action@v4
         with:
