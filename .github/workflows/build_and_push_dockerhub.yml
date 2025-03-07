@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master  # 触发工作流的分支，通常是 main 或 master
+  workflow_dispatch:  # 手动触发
 
 jobs:
   build-and-push:
@@ -23,9 +24,12 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/src hugomods/hugo:exts hugo --minify --baseURL "${{ secrets.HUGO_BASEURL }}"
 
+      - name: Get current timestamp
+        run: echo "TIMESTAMP=$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
+
       - name: Build and push Nginx image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/hugo-nginx:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/hugo-nginx:${{ env.TIMESTAMP }}
