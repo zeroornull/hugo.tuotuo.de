@@ -24,6 +24,12 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/src hugomods/hugo:exts hugo --minify --baseURL "${{ secrets.HUGO_BASEURL }}"
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Get current timestamp
         run: echo "TIMESTAMP=$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
 
@@ -32,4 +38,5 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_USERNAME }}/hugo-nginx:${{ env.TIMESTAMP }}
