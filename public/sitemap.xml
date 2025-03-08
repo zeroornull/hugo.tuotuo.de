@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2winsows%E7%89%88/</loc>
+    <loc>https://hugo.tuotuo.de/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2windows%E7%89%88/</loc>
     <lastmod>2025-03-07T23:21:11+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://hugo.tuotuo.de/post/</loc>
     <lastmod>2025-03-07T23:21:11+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://hugo.tuotuo.de/</loc>
     <lastmod>2025-03-07T23:21:11+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://hugo.tuotuo.de/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://hugo.tuotuo.de/tags/</loc>
   </url>
 </urlset>
